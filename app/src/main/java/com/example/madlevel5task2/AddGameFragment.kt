@@ -32,9 +32,9 @@ class AddGameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        binding.buttonSecond.setOnClickListener {
-//            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-//        }
+        binding.saveFab.setOnClickListener {
+            findNavController().navigate(R.id.action_AddGameFragment_to_GamesFragment)
+        }
     }
 
     override fun onDestroyView() {
