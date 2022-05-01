@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".AddGameFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="600dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/etTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/game"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="@string/title" />
+
+        <EditText
+            android:id="@+id/etPlatform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="50dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/Platform"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="@string/Platform" />
+
+        <EditText
+            android:id="@+id/etDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="100dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/Day"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="@string/Day" />
+
+        <EditText
+            android:id="@+id/etMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="142dp"
+            android:layout_marginTop="100dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/Month"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="@string/Month" />
+
+        <EditText
+            android:id="@+id/etYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="272dp"
+            android:layout_marginTop="100dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/Year"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="@string/Year" />
+
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
