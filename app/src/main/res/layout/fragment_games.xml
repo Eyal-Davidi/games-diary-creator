@@ -5,9 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".GameBacklogFragment">
+    tools:context=".ui.GamesFragment">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvGames"
         android:layout_width="409dp"
         android:layout_height="729dp"
         android:background="@color/white"

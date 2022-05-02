@@ -15,4 +15,5 @@
     <string name="plusicon">plusIcon</string>
     <string name="game">Game</string>
     <string name="saveIcon">Save Icon</string>
+    <string name="not_valid_game">Game is not valid. Please check the details</string>
 </resources>
