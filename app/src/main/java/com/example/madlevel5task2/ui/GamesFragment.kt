@@ -5,12 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.madlevel5task2.R
 import com.example.madlevel5task2.adpter.GameAdapter
 import com.example.madlevel5task2.databinding.FragmentGamesBinding
 import com.example.madlevel5task2.model.Game
@@ -20,7 +22,6 @@ import com.example.madlevel5task2.viewModel.GameViewModel
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
 
-//class GameBacklogFragment : Fragment() {
 class GamesFragment : Fragment() {
 
     private var _binding: FragmentGamesBinding? = null
@@ -47,6 +48,10 @@ class GamesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initViews()
         observeAddGameResult()
+
+        binding.fabDeleteAll.setOnClickListener {
+            deleteAllGames()
+        }
     }
 
     private fun initViews() {
@@ -92,10 +97,14 @@ class GamesFragment : Fragment() {
         return ItemTouchHelper(callback)
     }
     private fun observeAddGameResult() {
-        viewModel.games.observe(viewLifecycleOwner, Observer { games ->
+        viewModel.games.observe(viewLifecycleOwner, { games ->
             this@GamesFragment.games.clear()
             this@GamesFragment.games.addAll(games)
             gameAdapter.notifyDataSetChanged()
         })
+    }
+
+    private fun deleteAllGames() {
+            viewModel.deleteAllGames()
     }
 }

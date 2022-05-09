@@ -51,13 +51,13 @@ class AddGameFragment : Fragment() {
 
     private fun onAddGame() {
         val gameName = binding.etTitle.text.toString()
-        val gamePortal = binding.etTitle.text.toString()
+        val gamePortal = binding.etPlatform.text.toString()
         val gameDate = binding.etDay.text.toString()
 
         //GAME DAY + GAME MONTH + GAME YEAR IN MODEL
 
         ////GAMEPORTAL + GAMEDATE
-        if (gameName.isNotBlank()) {
+        if (gameName.isNotBlank() and gamePortal.isNotBlank()) {
             viewModel.insertGame(Game(gameName, gamePortal, gameDate))
             findNavController().popBackStack()
 
