@@ -17,4 +17,5 @@
     <string name="saveIcon">Save Icon</string>
     <string name="not_valid_game">Game is not valid. Please check the details</string>
     <string name="deleteAll">deleteAll</string>
+    <string name="action_delete_all">Delete All</string>
 </resources>

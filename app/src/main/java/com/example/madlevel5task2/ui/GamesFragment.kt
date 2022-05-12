@@ -42,16 +42,13 @@ class GamesFragment : Fragment() {
 
         _binding = FragmentGamesBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
         observeAddGameResult()
-
-        binding.fabDeleteAll.setOnClickListener {
-            deleteAllGames()
-        }
     }
 
     private fun initViews() {
@@ -104,7 +101,5 @@ class GamesFragment : Fragment() {
         })
     }
 
-    private fun deleteAllGames() {
-            viewModel.deleteAllGames()
-    }
+
 }
