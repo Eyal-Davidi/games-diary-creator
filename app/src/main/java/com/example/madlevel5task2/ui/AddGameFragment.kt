@@ -1,11 +1,10 @@
 package com.example.madlevel5task2.ui
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.madlevel5task2.R
@@ -37,6 +36,12 @@ class AddGameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+//        HIDE THE ACTION BAR
+//        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
+
+//        (R.id.action_delete_all as AppCompatActivity).supportActionBar?.hide()
+
 
         binding.saveFab.setOnClickListener {
 //            findNavController().navigate(R.id.action_AddGameFragment_to_GamesFragment)

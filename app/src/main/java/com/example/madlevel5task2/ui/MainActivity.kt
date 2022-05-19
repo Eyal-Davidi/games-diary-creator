@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity() {
             if (destination.id in arrayOf(R.id.AddGameFragment)) {
                 binding.plusFab.hide()
                 //xxxxx
-//                R.id.action_delete_all
+//                R.id.action_delete_all.hide()
                 //xxxxx
             } else {
                 binding.plusFab.show()
