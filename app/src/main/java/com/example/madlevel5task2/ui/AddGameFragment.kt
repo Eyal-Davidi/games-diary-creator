@@ -11,6 +11,9 @@ import com.example.madlevel5task2.R
 import com.example.madlevel5task2.databinding.FragmentAddGameBinding
 import com.example.madlevel5task2.model.Game
 import com.example.madlevel5task2.viewModel.GameViewModel
+import java.time.LocalDate
+import java.time.OffsetDateTime
+import java.time.format.DateTimeFormatter
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -57,7 +60,35 @@ class AddGameFragment : Fragment() {
     private fun onAddGame() {
         val gameName = binding.etTitle.text.toString()
         val gamePortal = binding.etPlatform.text.toString()
-        val gameDate = binding.etDay.text.toString()
+//        val gameDate = LocalDate.parse(binding.etDay.text)
+//        var formatter = DateTimeFormatter.ofPattern("dd-MMMM-yyyy")
+//        val gameDate = LocalDate.parse((binding.etYear.text.toString() +
+//                "-" + binding.etMonth.text + "-" + binding.etDay.text).format(formatter))
+        val gameDate = LocalDate.parse(binding.etYear.text.toString()
+                + "-" + binding.etMonth.text + "-" + binding.etDay.text)
+
+
+//        var formattedDate = binding.etDay.text.toString().format(formatter)
+//
+//        val gameDate = LocalDate.parse(formattedDate)
+
+//        var formatter = DateTimeFormatter.ofPattern("dd-MMMM-yyyy")
+//        val gameDate = LocalDate.parse(binding.etDay.text).format(formatter)
+
+//        assertThat(binding.etDay.text).isEqualTo("2018-12-31")
+
+//        val gameDateDetails = binding.etDay.text.toString() + binding.etMonth.text.toString() + binding.etYear.text.toString()
+
+//        val gameDateDetails = binding.etDay.text
+//        val gameDate= OffsetDateTime.parse(gameDateDetails).toLocalDate()
+//        val gameDate : LocalDate = binding.etDay.toString()
+//        static fun parse(gameDate: LocalDate): LocalDate!
+
+
+//        val formatter = DateTimeFormatter.ofPattern("EEE MMM d HH:mm:ss yyyy")
+//        var da = formatter.format(game.gameDate)
+//        val gameDate = LocalDateTime.now()
+
 
         //GAME DAY + GAME MONTH + GAME YEAR IN MODEL
 

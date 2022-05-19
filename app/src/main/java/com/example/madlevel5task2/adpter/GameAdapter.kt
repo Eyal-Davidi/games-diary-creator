@@ -17,7 +17,12 @@ class GameAdapter(private val games: List<Game>) : RecyclerView.Adapter<GameAdap
         fun databind(game: Game) {
             binding.tvGameTitle.text = game.gameName
             binding.tvGamePlatform.text = game.gamePortal
-            binding.tvGameDate.text = game.gameDate // CHANGE TO DATE
+            binding.tvGameDate.text = game.gameDate.toString() // CHANGE TO DATE
+
+        //            binding.tvGameDate.text = game.gameDate // CHANGE TO DATE
+//            val formatter = DateTimeFormatter.ofPattern("EEE MMM d HH:mm:ss yyyy")
+//            binding.tvGameDate.text = formatter.format(game.gameDate)
+
         }
     }
     /**
