@@ -7,13 +7,13 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="title">Title</string>
+    <string name="title2">Ti</string>
     <string name="Platform">Platform</string>
     <string name="Day">Day</string>
     <string name="Month">Month</string>
     <string name="Year">Year</string>
     <string name="plusicon">plusIcon</string>
-    <string name="game">Title</string>
+    <string name="title">Title</string>
     <string name="saveIcon">Save Icon</string>
     <string name="not_valid_game">Game is not valid. Please check the details</string>
     <string name="deleteAll">deleteAll</string>

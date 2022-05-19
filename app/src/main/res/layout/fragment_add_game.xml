@@ -21,14 +21,20 @@
 
         <EditText
             android:id="@+id/etTitle"
+            style="@style/Widget.AppCompat.EditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
+            android:autoText="true"
             android:autofillHints=""
             android:ems="10"
-            android:hint="@string/game"
+            android:hint="@string/title"
             android:inputType="textPersonName"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:singleLine="false"
+            android:textAllCaps="true"
+            android:textColorHighlight="@color/purple_500"
+            android:textColorLink="@color/purple_700" />
 
         <EditText
             android:id="@+id/etPlatform"

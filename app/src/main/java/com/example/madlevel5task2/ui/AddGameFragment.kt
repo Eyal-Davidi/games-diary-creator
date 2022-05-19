@@ -1,9 +1,11 @@
 package com.example.madlevel5task2.ui
 
+import android.os.Build
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -11,6 +13,10 @@ import com.example.madlevel5task2.R
 import com.example.madlevel5task2.databinding.FragmentAddGameBinding
 import com.example.madlevel5task2.model.Game
 import com.example.madlevel5task2.viewModel.GameViewModel
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.OffsetDateTime
+import java.time.format.DateTimeFormatter
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -57,13 +63,18 @@ class AddGameFragment : Fragment() {
     private fun onAddGame() {
         val gameName = binding.etTitle.text.toString()
         val gamePortal = binding.etPlatform.text.toString()
-        val gameDate = binding.etDay.text.toString()
+//        val gameDateDetails = binding.etDay.text.toString() + binding.etMonth.text.toString() + binding.etYear.text.toString()
+//        val gameDate : LocalDate = OffsetDateTime.parse(gameDateDetails).toLocalDate()
+
+//        val formatter = DateTimeFormatter.ofPattern("EEE MMM d HH:mm:ss yyyy")
+//        var da = formatter.format(game.gameDate)
+//        val gameDate = LocalDateTime.now()
 
         //GAME DAY + GAME MONTH + GAME YEAR IN MODEL
 
         ////GAMEPORTAL + GAMEDATE
         if (gameName.isNotBlank() and gamePortal.isNotBlank()) {
-            viewModel.insertGame(Game(gameName, gamePortal, gameDate))
+//            viewModel.insertGame(Game(gameName, gamePortal, gameDate))
             findNavController().popBackStack()
 
         } else {
