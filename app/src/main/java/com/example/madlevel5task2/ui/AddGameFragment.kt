@@ -4,14 +4,15 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.madlevel5task2.R
 import com.example.madlevel5task2.databinding.FragmentAddGameBinding
 import com.example.madlevel5task2.model.Game
 import com.example.madlevel5task2.viewModel.GameViewModel
 import java.time.LocalDate
+import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 
 /**
@@ -104,45 +105,16 @@ class AddGameFragment : Fragment() {
         //GAME DAY + GAME MONTH + GAME YEAR IN MODEL
 
         ////GAMEPORTAL + GAMEDATE
-//        if (gameName.isNotBlank() and gamePortal.isNotBlank()) {
-//            viewModel.insertGame(Game(gameName, gamePortal, gameDate))
-//            findNavController().popBackStack()
+        if (gameName.isNotBlank() and gamePortal.isNotBlank()) {
+            viewModel.insertGame(Game(gameName, gamePortal, gameDate))
+            findNavController().popBackStack()
 
-        var counter= 0
-
-        if (gameName.isBlank()) {
-//            viewModel.insertGame(Game(gameName, gamePortal, gameDate))
-//            findNavController().popBackStack()
+        } else {
             Toast.makeText(
                 activity,
-                R.string.not_valid_game_title, Toast.LENGTH_SHORT
+                R.string.not_valid_game, Toast.LENGTH_SHORT
             ).show()
-            counter++
         }
-
-        if (gamePortal.isBlank()) {
-//            viewModel.insertGame(Game(gameName, gamePortal, gameDate))
-//            findNavController().popBackStack()
-            Toast.makeText(
-                activity,
-                R.string.not_valid_game_portal, Toast.LENGTH_SHORT
-            ).show()
-            counter++
-        }
-
-        if (binding.etDay.text.toString().toInt() < 0 || binding.etDay.text.toString().toInt() > 31) {
-            Toast.makeText(
-                activity,
-                R.string.not_valid_game_day, Toast.LENGTH_SHORT
-            ).show()
-            counter++
-        }
-
-       if (counter == 0) {
-                    viewModel.insertGame(Game(gameName, gamePortal, gameDate))
-        findNavController().popBackStack()
-        }
-
     }
 }
 

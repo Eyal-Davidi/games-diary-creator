@@ -18,7 +18,4 @@
     <string name="not_valid_game">Game is not valid. Please check the details</string>
     <string name="deleteAll">deleteAll</string>
     <string name="action_delete_all">Delete All</string>
-    <string name="not_valid_game_title">Please fill in a valid game title</string>
-    <string name="not_valid_game_portal">Please fill in a valid game platform</string>
-    <string name="not_valid_game_day">Please fill in a valid day</string>
 </resources>

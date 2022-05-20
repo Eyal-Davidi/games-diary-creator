@@ -55,7 +55,6 @@
             android:layout_marginStart="12dp"
             android:layout_marginTop="100dp"
             android:autofillHints=""
-            android:digits="0123456789"
             android:ems="10"
             android:hint="@string/Day"
             android:inputType="textPersonName"
