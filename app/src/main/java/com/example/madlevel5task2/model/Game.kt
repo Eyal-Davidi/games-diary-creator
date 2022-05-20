@@ -15,7 +15,8 @@ data class Game(
     var gamePortal: String,
 
     @ColumnInfo(name = "gameDate")
-    var gameDate: LocalDate,
+//    var gameDate: LocalDate,
+    var gameDate: String,
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")

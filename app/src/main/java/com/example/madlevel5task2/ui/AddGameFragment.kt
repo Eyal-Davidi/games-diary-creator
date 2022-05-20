@@ -60,15 +60,27 @@ class AddGameFragment : Fragment() {
     private fun onAddGame() {
         val gameName = binding.etTitle.text.toString()
         val gamePortal = binding.etPlatform.text.toString()
-//        val gameDate = LocalDate.parse(binding.etDay.text)
-//        var formatter = DateTimeFormatter.ofPattern("dd-MMMM-yyyy")
-//        val gameDate = LocalDate.parse((binding.etYear.text.toString() +
-//                "-" + binding.etMonth.text + "-" + binding.etDay.text).format(formatter))
-        val gameDate = LocalDate.parse(binding.etYear.text.toString()
-                + "-" + binding.etMonth.text + "-" + binding.etDay.text)
+        val formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy")
+//        val gameDate= LocalDate.now().format(formatter)
+        val gameDate= "Release: " + (LocalDate.parse(binding.etYear.text.toString() +
+                "-" + binding.etMonth.text + "-" + binding.etDay.text)).format(formatter)
+
+//        val fullDate = LocalDate.parse((binding.etDay.text.toString() +
+//                "-" + binding.etMonth.text + "-" + binding.etYear.text).format(formatter))
+
+//        val fullDate = binding.etDay.text.toString() +
+//                "-" + binding.etMonth.text + "-" + binding.etYear.text
+//        val fullDate = ("21-12-2022")
+//        val date2 = formatter.format(fullDate)
+//        val gameDate = LocalDate.parse(date2)
+
+//        val formatter = DateTimeFormatter.ofPattern("d-MMMM-yyyy")
+//        binding.tvGameDateHistory.text = formatter.format(game.gameDate)
+//        val gameDate = LocalDate.parse(binding.etYear.text.toString()
+//                + "-" + binding.etMonth.text + "-" + binding.etDay.text)
 
 
-//        var formattedDate = binding.etDay.text.toString().format(formatter)
+//        qvar formattedDate = binding.etDay.text.toString().format(formatter)
 //
 //        val gameDate = LocalDate.parse(formattedDate)
 
@@ -105,3 +117,4 @@ class AddGameFragment : Fragment() {
         }
     }
 }
+
