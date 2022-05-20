@@ -30,4 +30,8 @@ class GameRepository(context: Context) {
     suspend fun deleteAllGames() {
         gameDao.deleteAllGames()
     }
+
+    suspend fun sortGames(){
+        gameDao.sortGames()
+    }
 }

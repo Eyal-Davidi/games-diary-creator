@@ -19,4 +19,7 @@ interface GameDao {
     @Query("DELETE FROM gameTable")
     suspend fun deleteAllGames()
 
+    @Query("SELECT * FROM 'gameTable' ORDER BY 'gameDate'")
+    fun sortGames(): List<Game>
+
 }

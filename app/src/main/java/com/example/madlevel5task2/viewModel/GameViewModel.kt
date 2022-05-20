@@ -34,4 +34,10 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    fun sortGames(){
+        ioScope.launch {
+            gameRepository.sortGames()
+        }
+    }
+
 }

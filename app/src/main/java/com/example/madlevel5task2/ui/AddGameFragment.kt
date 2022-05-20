@@ -115,6 +115,8 @@ class AddGameFragment : Fragment() {
                 R.string.not_valid_game, Toast.LENGTH_SHORT
             ).show()
         }
+
+        viewModel.sortGames()
     }
 }
 
