@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.madlevel5task2.R
 import com.example.madlevel5task2.databinding.ItemGameBinding
 import com.example.madlevel5task2.model.Game
+import java.time.format.DateTimeFormatter
 
 class GameAdapter(private val games: List<Game>) : RecyclerView.Adapter<GameAdapter.ViewHolder>() {
 
@@ -17,12 +18,9 @@ class GameAdapter(private val games: List<Game>) : RecyclerView.Adapter<GameAdap
         fun databind(game: Game) {
             binding.tvGameTitle.text = game.gameName
             binding.tvGamePlatform.text = game.gamePortal
-            binding.tvGameDate.text = game.gameDate.toString() // CHANGE TO DATE
-
-        //            binding.tvGameDate.text = game.gameDate // CHANGE TO DATE
-//            val formatter = DateTimeFormatter.ofPattern("EEE MMM d HH:mm:ss yyyy")
-//            binding.tvGameDate.text = formatter.format(game.gameDate)
-
+//            binding.tvGameDate.text = game.gameDate.toString() // CHANGE TO DATE
+            val formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy")
+            binding.tvGameDate.text = "Release: " + formatter.format(game.gameDate)// CHANGE TO DATE
         }
     }
     /**

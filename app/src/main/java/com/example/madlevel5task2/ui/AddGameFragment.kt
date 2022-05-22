@@ -60,53 +60,12 @@ class AddGameFragment : Fragment() {
     private fun onAddGame() {
         val gameName = binding.etTitle.text.toString()
         val gamePortal = binding.etPlatform.text.toString()
-        val formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy")
-//        val gameDate= LocalDate.now().format(formatter)
-        val gameDate= "Release: " + (LocalDate.parse(binding.etYear.text.toString() +
-                "-" + binding.etMonth.text + "-" + binding.etDay.text)).format(formatter)
+        val gameDate= LocalDate.parse(binding.etYear.text.toString() +
+                "-" + binding.etMonth.text + "-" + binding.etDay.text)
 
-//        val fullDate = LocalDate.parse((binding.etDay.text.toString() +
-//                "-" + binding.etMonth.text + "-" + binding.etYear.text).format(formatter))
-
-//        val fullDate = binding.etDay.text.toString() +
-//                "-" + binding.etMonth.text + "-" + binding.etYear.text
-//        val fullDate = ("21-12-2022")
-//        val date2 = formatter.format(fullDate)
-//        val gameDate = LocalDate.parse(date2)
-
-//        val formatter = DateTimeFormatter.ofPattern("d-MMMM-yyyy")
-//        binding.tvGameDateHistory.text = formatter.format(game.gameDate)
-//        val gameDate = LocalDate.parse(binding.etYear.text.toString()
-//                + "-" + binding.etMonth.text + "-" + binding.etDay.text)
-
-
-//        qvar formattedDate = binding.etDay.text.toString().format(formatter)
-//
-//        val gameDate = LocalDate.parse(formattedDate)
-
-//        var formatter = DateTimeFormatter.ofPattern("dd-MMMM-yyyy")
-//        val gameDate = LocalDate.parse(binding.etDay.text).format(formatter)
-
-//        assertThat(binding.etDay.text).isEqualTo("2018-12-31")
-
-//        val gameDateDetails = binding.etDay.text.toString() + binding.etMonth.text.toString() + binding.etYear.text.toString()
-
-//        val gameDateDetails = binding.etDay.text
-//        val gameDate= OffsetDateTime.parse(gameDateDetails).toLocalDate()
-//        val gameDate : LocalDate = binding.etDay.toString()
-//        static fun parse(gameDate: LocalDate): LocalDate!
-
-
-//        val formatter = DateTimeFormatter.ofPattern("EEE MMM d HH:mm:ss yyyy")
-//        var da = formatter.format(game.gameDate)
-//        val gameDate = LocalDateTime.now()
-
-
-        //GAME DAY + GAME MONTH + GAME YEAR IN MODEL
-
-        ////GAMEPORTAL + GAMEDATE
         if (gameName.isNotBlank() and gamePortal.isNotBlank()) {
             viewModel.insertGame(Game(gameName, gamePortal, gameDate))
+
             findNavController().popBackStack()
 
         } else {
@@ -115,8 +74,6 @@ class AddGameFragment : Fragment() {
                 R.string.not_valid_game, Toast.LENGTH_SHORT
             ).show()
         }
-
-        viewModel.sortGames()
     }
 }
 

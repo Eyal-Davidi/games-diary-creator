@@ -7,7 +7,7 @@ import com.example.madlevel5task2.model.Game
 @Dao
 interface GameDao {
 
-    @Query("SELECT * FROM gameTable")
+    @Query("SELECT * FROM gameTable ORDER BY gameDate DESC")
     fun getAllGames(): LiveData<List<Game>>
 
     @Insert
@@ -18,8 +18,4 @@ interface GameDao {
 
     @Query("DELETE FROM gameTable")
     suspend fun deleteAllGames()
-
-    @Query("SELECT * FROM 'gameTable' ORDER BY 'gameDate'")
-    fun sortGames(): List<Game>
-
 }

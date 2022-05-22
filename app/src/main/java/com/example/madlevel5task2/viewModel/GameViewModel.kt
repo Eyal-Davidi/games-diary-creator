@@ -33,11 +33,4 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
             gameRepository.deleteAllGames()
         }
     }
-
-    fun sortGames(){
-        ioScope.launch {
-            gameRepository.sortGames()
-        }
-    }
-
 }
