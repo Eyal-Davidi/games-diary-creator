@@ -40,14 +40,7 @@ class AddGameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        HIDE THE ACTION BAR
-//        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
-
-//        (R.id.action_delete_all as AppCompatActivity).supportActionBar?.hide()
-
-
         binding.saveFab.setOnClickListener {
-//            findNavController().navigate(R.id.action_AddGameFragment_to_GamesFragment)
             onAddGame()
         }
     }
@@ -60,19 +53,32 @@ class AddGameFragment : Fragment() {
     private fun onAddGame() {
         val gameName = binding.etTitle.text.toString()
         val gamePortal = binding.etPlatform.text.toString()
-        val gameDate= LocalDate.parse(binding.etYear.text.toString() +
-                "-" + binding.etMonth.text + "-" + binding.etDay.text)
 
-        if (gameName.isNotBlank() and gamePortal.isNotBlank()) {
-            viewModel.insertGame(Game(gameName, gamePortal, gameDate))
-
-            findNavController().popBackStack()
-
-        } else {
+        if (gameName.isBlank() or gamePortal.isBlank()) {
             Toast.makeText(
                 activity,
-                R.string.not_valid_game, Toast.LENGTH_SHORT
+                "Please enter a valid game title and portal",
+                Toast.LENGTH_LONG
             ).show()
+        }
+
+        else {
+            try {
+                val gameDate = LocalDate.parse(
+                    binding.etYear.text.toString() +
+                            "-" + binding.etMonth.text + "-" + binding.etDay.text
+                )
+
+                viewModel.insertGame(Game(gameName, gamePortal, gameDate))
+                findNavController().popBackStack()
+
+            } catch (error: Throwable) {
+                Toast.makeText(
+                    activity,
+                    "Date is not valid. Please enter a valid date",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
         }
     }
 }

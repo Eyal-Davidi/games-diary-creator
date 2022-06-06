@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
 
     private val viewModel: GameViewModel by viewModels()
 
-    //    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navController: NavController
     private lateinit var binding: ActivityMainBinding
 
@@ -42,14 +41,8 @@ class MainActivity : AppCompatActivity() {
 
         navController = navHostFragment.navController
 
-
-//        val navController = findNavController(R.id.action_AddGameFragment_to_GamesFragment)
         val config = AppBarConfiguration(navController.graph)
         binding.toolbar.setupWithNavController(navController, config)
-
-//        val navController = findNavController(R.id.nav_host_fragment_content_main)
-//        appBarConfiguration = AppBarConfiguration(navController.graph)
-//        setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.toolbar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
@@ -68,12 +61,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         fabToggler()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -95,22 +82,9 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id in arrayOf(R.id.AddGameFragment)) {
                 binding.plusFab.hide()
-                //xxxxx
-//                R.id.action_delete_all.hide()
-                //xxxxx
             } else {
                 binding.plusFab.show()
             }
         }
     }
-
-//    private fun fabToggler2() {
-//        onMenuItemSelected(R.id.action_delete_all) { _, destination, _ ->
-//            if (destination.id in arrayOf(R.id.AddGameFragment)) {
-//                R.id.action_delete_all
-//            } else {
-//                binding.plusFab.show()
-//            }
-//        }
-//    }
 }

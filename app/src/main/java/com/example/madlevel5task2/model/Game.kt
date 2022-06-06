@@ -16,7 +16,6 @@ data class Game(
 
     @ColumnInfo(name = "gameDate")
     var gameDate: LocalDate,
-//    var gameDate: String,
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")

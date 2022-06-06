@@ -29,7 +29,6 @@ abstract class GameRoomDatabase : RoomDatabase() {
                             context.applicationContext,
                             GameRoomDatabase::class.java, DATABASE_NAME
                         )
-                            //.allowMainThreadQueries()
                             .build()
                     }
                 }
@@ -37,5 +36,4 @@ abstract class GameRoomDatabase : RoomDatabase() {
             return gameRoomDatabaseInstance
         }
     }
-
 }

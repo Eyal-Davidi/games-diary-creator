@@ -1,5 +1,6 @@
 package com.example.madlevel5task2.adpter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,12 +16,12 @@ class GameAdapter(private val games: List<Game>) : RecyclerView.Adapter<GameAdap
 
         val binding = ItemGameBinding.bind(itemView)
 
+        @SuppressLint("SetTextI18n")
         fun databind(game: Game) {
             binding.tvGameTitle.text = game.gameName
             binding.tvGamePlatform.text = game.gamePortal
-//            binding.tvGameDate.text = game.gameDate.toString() // CHANGE TO DATE
             val formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy")
-            binding.tvGameDate.text = "Release: " + formatter.format(game.gameDate)// CHANGE TO DATE
+            binding.tvGameDate.text = "Release: " + formatter.format(game.gameDate)
         }
     }
     /**

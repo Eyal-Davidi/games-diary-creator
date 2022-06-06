@@ -1,10 +1,8 @@
 package com.example.madlevel5task2.ui
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -42,7 +40,16 @@ class GamesFragment : Fragment() {
 
         _binding = FragmentGamesBinding.inflate(inflater, container, false)
         return binding.root
+    }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        setHasOptionsMenu(true)
+        super.onCreate(savedInstanceState)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_main, menu)
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -100,6 +107,4 @@ class GamesFragment : Fragment() {
             gameAdapter.notifyDataSetChanged()
         })
     }
-
-
 }
